@@ -1,16 +1,21 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
+import pygame
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    pygame.init()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # Set up the drawing window
+    screen = pygame.display.set_mode([500, 500])
+    running = True
+    while running:
+
+        # Did the user click the window close button?
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            # Fill the background with white
+            screen.fill((255, 255, 255))
+
+            # Draw a solid blue circle in the center
+            pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+
+            # Flip the display
+            pygame.display.flip()
